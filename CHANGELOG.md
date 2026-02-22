@@ -1,3 +1,23 @@
+# [11.0.0](https://github.com/adrianiy/platform/compare/v10.3.0...v11.0.0) (2026-02-22)
+
+
+### Bug Fixes
+
+* add semantic-release and plugins as devDependencies ([90e6cb9](https://github.com/adrianiy/platform/commit/90e6cb9dcd375dac568114d07737294a8fc68a19))
+* allow scripts in CI for rollup native binaries ([fafdb1b](https://github.com/adrianiy/platform/commit/fafdb1b7615bb44b0ada81e356c35a1a9349f002))
+* upgrade CI to Node 20 (required by semantic-release v22) ([6521569](https://github.com/adrianiy/platform/commit/65215693bcd15d53fc401103ee5a9eb4ee380e4b))
+* use npm install with --legacy-peer-deps in CI workflows ([14dd133](https://github.com/adrianiy/platform/commit/14dd1330021e7074b26b6589cd9cb600b93097d4))
+
+
+### Features
+
+* migrate to Angular 18 and npm ([c67cd90](https://github.com/adrianiy/platform/commit/c67cd90f3dd6f9cd37d135ef6d3a80593258c46a))
+
+
+### BREAKING CHANGES
+
+* Requires Angular >=18 and TypeScript >=5.4
+
 # [10.3.0](https://github.com/adrianiy/platform/compare/v10.2.1...v10.3.0) (2022-05-09)
 
 
