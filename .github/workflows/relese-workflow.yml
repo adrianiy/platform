@@ -30,7 +30,7 @@ jobs:
 
       - name: npm install and build
         run: |
-          npm ci
+          npm install --ignore-scripts --legacy-peer-deps
           npm run build
 
       - name: Create release version
