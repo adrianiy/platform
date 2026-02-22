@@ -3,9 +3,9 @@
         "packages/*"
     ],
     "version": "0.0.1",
-    "npmClient": "yarn",
+    "npmClient": "npm",
     "command": {
-        "npmClient": "yarn"
+        "npmClient": "npm"
     },
     "ignoreChanges": [
         "**/*.spec.ts",

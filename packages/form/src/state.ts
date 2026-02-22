@@ -16,7 +16,7 @@ export interface Operations<T> {
 export type TraverseCallback = (parent: any, key: number | string, remainingPath: string[], value?: any) => any;
 
 export abstract class State {
-    static traverse<StateType>(state: StateType, path: string[], fn?: TraverseCallback) {
+    static traverse<StateType extends object>(state: StateType, path: string[], fn?: TraverseCallback) {
         let deepValue = state;
 
         for (const k of path) {
@@ -40,7 +40,7 @@ export abstract class State {
 
                 deepValue = transformed[k];
 
-                Object.assign(parent, transformed);
+                Object.assign(parent as any, transformed);
             }
 
             // If we were not able to find this state inside of our root state
@@ -55,11 +55,11 @@ export abstract class State {
         return deepValue;
     }
 
-    static get<StateType>(state: StateType, path: string[]): any {
+    static get<StateType extends object>(state: StateType, path: string[]): any {
         return State.traverse(state, path);
     }
 
-    static assign<StateType>(state: StateType, path: string[], value?: any) {
+    static assign<StateType extends object>(state: StateType, path: string[], value?: any) {
         const operations = State.inspect(state);
 
         if (path.length === 0) {
@@ -109,7 +109,7 @@ export abstract class State {
         return root;
     }
 
-    static inspect<K>(object: K): Operations<K> {
+    static inspect<K extends object>(object: K): Operations<K> {
         const metaOperations = (
             // TODO: Write proper type declarations for following Function types
             update: Function,

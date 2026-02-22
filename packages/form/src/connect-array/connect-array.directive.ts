@@ -47,7 +47,7 @@ import { ConnectArrayTemplate } from './connect-array-template';
 export class ConnectArrayDirective extends ControlContainer implements OnInit, OnDestroy {
     private stateSubscription: Unsubscribe;
 
-    private array = new FormArray([]);
+    private array = new FormArray<any>([]);
 
     private key?: string;
 
@@ -216,7 +216,7 @@ export class ConnectArrayDirective extends ControlContainer implements OnInit, O
         }
 
         const iterate = (iterable: any): FormArray => {
-            const array = new FormArray([]);
+            const array = new FormArray<any>([]);
 
             this.registerInternals(array);
 

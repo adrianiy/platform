@@ -1,19 +1,9 @@
 {
     "name": "@adrian.insua/ngredux-router",
-    "version": "1.2.0",
+    "version": "2.0.0",
     "description": "Keep your Angular 2+ router state in Redux.",
-    "author": "Dag Stuan",
     "license": "MIT",
     "homepage": "https://github.com/AdrianInsua/platform",
-    "main": "dist/bundles/adrian.insua-ngredux-router.umd.js",
-    "module": "dist/fesm2015/adrian.insua-ngredux-router.js",
-    "es2015": "dist/fesm2015/adrian.insua-ngredux-router.js",
-    "esm2015": "dist/esm2015/adrian.insua-ngredux-router.js",
-    "fesm2015": "dist/fesm2015/adrian.insua-ngredux-router.js",
-    "typings": "dist/adrian.insua-ngredux-router.d.ts",
-    "files": [
-        "dist/"
-    ],
     "scripts": {
         "build": "ng build --configuration production ngredux-router"
     },
@@ -24,10 +14,13 @@
     "bugs": {
         "url": "https://github.com/AdrianInsua/platform"
     },
+    "typings": "dist/adrian.insua-ngredux-router.d.ts",
+    "files": [
+        "dist/"
+    ],
     "keywords": [
         "angular",
-        "angular2",
-        "angular@11",
+        "angular@18",
         "ivy",
         "redux",
         "routing",
@@ -37,16 +30,16 @@
         "access": "public"
     },
     "engines": {
-        "node": ">=8"
+        "node": ">=18"
     },
     "devDependencies": {
         "@adrian.insua/ngredux-store": "*"
     },
     "peerDependencies": {
         "@adrian.insua/ngredux-store": "*",
-        "@angular/common": "^13.3.6",
-        "@angular/core": "^13.3.6",
-        "@angular/router": "^13.3.6",
+        "@angular/common": ">=12.0.0",
+        "@angular/core": ">=12.0.0",
+        "@angular/router": ">=12.0.0",
         "redux": "^4.0.0",
         "rxjs": "^7.3.0"
     }

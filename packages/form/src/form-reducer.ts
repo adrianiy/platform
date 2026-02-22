@@ -13,7 +13,7 @@ export const defaultFormReducer = <RootState>(initialState?: RootState | Collect
     ) => {
         switch (action.type) {
             case FORM_CHANGED:
-                return State.assign(state, action.payload.path, action.payload.value);
+                return State.assign(state as any, action.payload.path, action.payload.value);
             default:
                 return state;
         }

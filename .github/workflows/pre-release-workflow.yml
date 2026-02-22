@@ -4,39 +4,37 @@ on:
   workflow_dispatch:
 
 jobs:
-    build:
-        if: "!contains(github.event.head_commit.message, 'skip ci')"
-        runs-on: ubuntu-latest
+  build:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v2
-              with:
-                  submodules: recursive
-                  token: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Use Node.js 14.x
-              uses: actions/setup-node@v2
-              with:
-                  node-version: 14.x
-                  registry-url: 'https://registry.npmjs.org'
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
 
-            - name: Configure Git User
-              run: |
-                  git config --global user.email "ci@glyph.com"
-                  git config --global user.name "ci@$GITHUB_ACTOR"
+      - name: Configure Git User
+        run: |
+          git config --global user.email "ci@glyph.com"
+          git config --global user.name "ci@$GITHUB_ACTOR"
 
-            - name: yarn install, build
-              run: |
-                  yarn --no-lockfile
-                  yarn build
+      - name: npm install and build
+        run: |
+          npm ci
+          npm run build
 
-            - name: Create release version
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-              run: |
-                npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-                yarn semantic-release
-                npx semantic-release
-
+      - name: Create release version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          npx semantic-release

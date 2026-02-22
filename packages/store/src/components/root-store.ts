@@ -50,7 +50,7 @@ export class RootStore<RootState> extends NgRedux<RootState> {
             compose<StoreCreator>(
                 applyMiddleware(...middleware),
                 ...enhancers,
-            )(createStore)(enableFractalReducers(rootReducer), initState),
+            )(createStore)(enableFractalReducers(rootReducer), initState as any),
         );
     };
 

@@ -1,15 +1,28 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "es2015",
+        "target": "ES2022",
+        "module": "ES2022",
         "moduleResolution": "node",
-        "lib": ["esnext", "dom", "dom.iterable"],
+        "lib": [
+            "ES2022",
+            "dom",
+            "dom.iterable"
+        ],
         "baseUrl": ".",
         "strict": true,
         "paths": {
-            "@adrian.insua/ngredux-store": ["packages/store/dist/adrian.insua-ngredux-store", "packages/store/dist"],
-            "@adrian.insua/ngredux-form": ["packages/form/dist/adrian.insua-ngredux-form", "packages/form/dist"],
-            "@adrian.insua/ngredux-router": ["packages/router/dist/adrian.insua-ngredux-router", "packages/router/dist"]
+            "@adrian.insua/ngredux-store": [
+                "packages/store/dist/adrian.insua-ngredux-store",
+                "packages/store/dist"
+            ],
+            "@adrian.insua/ngredux-form": [
+                "packages/form/dist/adrian.insua-ngredux-form",
+                "packages/form/dist"
+            ],
+            "@adrian.insua/ngredux-router": [
+                "packages/router/dist/adrian.insua-ngredux-router",
+                "packages/router/dist"
+            ]
         },
         "sourceMap": true,
         "esModuleInterop": true,
@@ -20,6 +33,7 @@
         "noUnusedLocals": true,
         "preserveSymlinks": true,
         "noUnusedParameters": true,
-        "pretty": true
+        "pretty": true,
+        "useDefineForClassFields": false
     }
 }

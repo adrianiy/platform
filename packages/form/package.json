@@ -1,8 +1,7 @@
 {
     "name": "@adrian.insua/ngredux-form",
-    "version": "1.2.0",
+    "version": "2.0.0",
     "description": "Build Angular 2+ forms with Redux",
-    "author": "Chris Bond",
     "license": "MIT",
     "homepage": "https://github.com/AdrianInsua/platform",
     "scripts": {
@@ -15,18 +14,13 @@
     "bugs": {
         "url": "https://github.com/AdrianInsua/platform"
     },
-    "main": "dist/bundles/adrian.insua-ngredux-form.umd.js",
-    "module": "dist/fesm2015/adrian.insua-ngredux-form.js",
-    "es2015": "dist/fesm2015/adrian.insua-ngredux-form.js",
-    "esm2015": "dist/esm2015/adrian.insua-ngredux-form.js",
-    "fesm2015": "dist/fesm2015/adrian.insua-ngredux-form.js",
     "typings": "dist/adrian.insua-ngredux-form.d.ts",
     "files": [
         "dist/"
     ],
     "keywords": [
         "angular",
-        "angular@11",
+        "angular@18",
         "ivy",
         "redux",
         "form",
@@ -36,12 +30,12 @@
         "access": "public"
     },
     "engines": {
-        "node": ">=8"
+        "node": ">=18"
     },
     "peerDependencies": {
         "@adrian.insua/ngredux-store": "*",
-        "@angular/core": "^13.3.6",
-        "@angular/forms": "^13.3.6",
+        "@angular/core": ">=12.0.0",
+        "@angular/forms": ">=12.0.0",
         "redux": "^4.0.0",
         "rxjs": "^7.3.0"
     },
